@@ -64,7 +64,13 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println(err)
 	}
-
+	for i, order := range ordersList {
+		err := db.Select(&order.Consists, "SELECT product, quantity, delivery FROM consists WHERE id = ?", order.ID)
+		if err != nil {
+			log.Println(err)
+		}
+		ordersList[i].Consists = order.Consists
+	}
 	err = ws.WriteJSON(&ordersList)
 	if err != nil {
 		log.Println(err)

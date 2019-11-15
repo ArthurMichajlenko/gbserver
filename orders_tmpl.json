@@ -3,13 +3,16 @@
         "id": 0,
         "courier_id": 0,
         "client_id": 0,
-        "product_to": "",
-        "product_from": "",
         "payment_method": "",
-        "quantity_to": 0.0,
-        "quantity_from": 0.0,
+        "consists": [
+            {
+                "product": "",
+                "quantity": 0.0,
+                "delivery": true
+            }
+        ],
         "order_cost": 0.0,
-        "order_status": 0,
+        "delivered": false,
         "delivery_delay": 0,
         "date_start": "2006-01-02 15:04:05",
         "date_finish": "2006-01-02 15:04:05"
