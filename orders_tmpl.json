@@ -8,7 +8,7 @@
             {
                 "product": "",
                 "quantity": 0.0,
-                "delivery": true
+                "delivery": 0
             }
         ],
         "order_cost": 0.0,
