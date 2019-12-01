@@ -4,11 +4,18 @@
         "courier_id": 0,
         "client_id": 0,
         "payment_method": "",
-        "consists": [
+        "consists_to": [
             {
                 "product": "",
                 "quantity": 0.0,
-                "delivery": 0
+                "price": 0.0
+            }
+        ],
+        "consists_from": [
+            {
+                "product": "",
+                "quantity": 0.0,
+                "price": 0.0
             }
         ],
         "order_cost": 0.0,

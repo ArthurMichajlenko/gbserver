@@ -65,11 +65,18 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	for i, order := range ordersList {
-		err := db.Select(&order.Consists, "SELECT product, quantity, delivery FROM consists WHERE id = ?", order.ID)
+		err := db.Select(&order.ConsistsTo, "SELECT product, quantity, price FROM consists_to WHERE id = ?", order.ID)
 		if err != nil {
 			log.Println(err)
 		}
-		ordersList[i].Consists = order.Consists
+		ordersList[i].ConsistsTo = order.ConsistsTo
+	}
+	for i, order := range ordersList {
+		err := db.Select(&order.ConsistsFrom, "SELECT product, quantity, price FROM consists_from WHERE id = ?", order.ID)
+		if err != nil {
+			log.Println(err)
+		}
+		ordersList[i].ConsistsFrom = order.ConsistsFrom
 	}
 	err = ws.WriteJSON(&ordersList)
 	if err != nil {
