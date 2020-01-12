@@ -2,20 +2,23 @@
     "sqltools.connections": [
         {
             "connectionTimeout": 30,
-            "database": "ArthurTest",
+            "database": "gelibert",
             "dialect": "MySQL",
-            "name": "Dev",
+            "isActive": false,
+            "isConnected": false,
+            "name": "MySQL ",
             "password": "Nfnmzyf",
             "port": 3306,
-            "server": "217.12.127.253",
-            "username": "arthur"
+            "server": "localhost",
+            "username": "root"
         },
         {
             "database": "./gelibert.db",
             "dialect": "SQLite",
-            "isActive": true,
-            "isConnected": true,
-            "name": "Local"
+            "isActive": false,
+            "isConnected": false,
+            "name": "SQLite"
         }
-    ]
+    ],
+    "sqltools.useNodeRuntime": true
 }
